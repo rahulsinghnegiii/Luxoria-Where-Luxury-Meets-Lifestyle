@@ -4,11 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "vercel-build": "rimraf .next && next build",
-    "postinstall": "node node_modules/rimraf/bin.js .next",
+    "build": "npm run clean && next build",
     "start": "next start",
-    "clean": "rimraf .next build-output",
+    "clean": "rm -rf .next && rm -rf build-output",
     "lint": "next lint",
     "admin:prepare": "cd scripts && npm install",
     "admin:promote": "cd scripts && node run-promote-admin.js",
@@ -30,7 +28,6 @@
     "react-dom": "18.2.0",
     "react-hot-toast": "^2.5.2",
     "react-icons": "^5.5.0",
-    "rimraf": "^5.0.0",
     "three": "^0.176.0"
   },
   "devDependencies": {

@@ -579,9 +579,9 @@ export const createOrder = async (order: Omit<Order, 'id' | 'createdAt'>): Promi
   const USE_MOCK_SERVICES = shouldUseMockServices();
   
   if (USE_MOCK_SERVICES || !isBrowser || !db) {
-    // In development, create a mock order ID
-    console.log('Creating mock order:', order);
-    return Promise.resolve(`mock-order-${Date.now()}`);
+  // In development, create a mock order ID
+  console.log('Creating mock order:', order);
+  return Promise.resolve(`mock-order-${Date.now()}`);
   } else {
     try {
       // Create a real order in Firestore
