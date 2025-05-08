@@ -13,6 +13,16 @@ const nextConfig = {
   // Explicitly set output directory for Vercel
   distDir: '.next',
 
+  // Add specific experimental settings for proper manifest generation
+  experimental: {
+    appDir: true,
+    instrumentationHook: false,
+    serverComponentsExternalPackages: [],
+    serverActions: {
+      bodySizeLimit: '2mb',
+    },
+  },
+
   images: {
     remotePatterns: [
       {
