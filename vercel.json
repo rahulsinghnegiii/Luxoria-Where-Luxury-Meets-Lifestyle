@@ -1,6 +1,3 @@
 {
-  "installCommand": "npm install --legacy-peer-deps",
-  "buildCommand": "npm run clean && npm run vercel-build",
-  "framework": "nextjs",
-  "devCommand": "npm run dev"
+  "buildCommand": "npm run vercel-build"
 } 

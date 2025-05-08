@@ -16,13 +16,16 @@ const nextConfig = {
   // Add specific experimental settings for proper manifest generation
   experimental: {
     appDir: true,
+    typedRoutes: true,
+    serverActions: true,
     instrumentationHook: false,
     serverComponentsExternalPackages: [],
-    serverActions: {
-      bodySizeLimit: '2mb',
-    },
   },
 
+  // Needed to handle special characters in folder names like (main)
+  trailingSlash: false,
+  skipTrailingSlashRedirect: true,
+  
   images: {
     remotePatterns: [
       {

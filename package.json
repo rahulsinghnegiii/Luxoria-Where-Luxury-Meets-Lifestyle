@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "vercel-build": "next build",
+    "vercel-build": "rimraf .next && next build",
     "postinstall": "node node_modules/rimraf/bin.js .next",
     "start": "next start",
     "clean": "rimraf .next build-output",
