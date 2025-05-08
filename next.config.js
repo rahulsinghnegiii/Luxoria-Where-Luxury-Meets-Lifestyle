@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-  // Specify a unique build directory to avoid conflicts
-  distDir: 'build-output',
+  // Remove custom build directory for Vercel compatibility
+  // distDir: 'build-output', 
 
   // Disable TypeScript and ESLint checks during build
   typescript: {
@@ -68,8 +68,8 @@ const nextConfig = {
     pagesBufferLength: 2,
   },
   
-  // Use the most compatible output mode
-  output: 'standalone',
+  // Use standard output without standalone for better Vercel compatibility
+  // output: 'standalone',
   
   // Fix experimental options according to Next.js 15 requirements
   experimental: {

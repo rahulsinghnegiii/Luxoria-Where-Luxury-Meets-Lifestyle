@@ -7,50 +7,56 @@ import { CartProvider } from '../lib/cartContext';
 import { Toaster } from 'react-hot-toast';
 
 export default function ClientProviders({ children }: { children: ReactNode }) {
+  // Only render on client-side to avoid hydration issues
   const [isMounted, setIsMounted] = useState(false);
 
-  // Only render providers after component is mounted on client
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  // Don't render anything that uses client-side features until mounted
   if (!isMounted) {
-    return <>{children}</>;
+    // Return a simple placeholder without any providers during SSR
+    return (
+      <div suppressHydrationWarning>
+        {/* This will be replaced on client */}
+        {children}
+      </div>
+    );
   }
 
+  // Once mounted on client, provide all context providers
   return (
-    <ErrorBoundary fallback={<FallbackComponent />}>
+    <>
       <AuthProvider>
         <CartProvider>
+          {children}
           <Toaster 
             position="top-right"
             toastOptions={{
-              duration: 3000,
+              // Default options for toast
+              duration: 4000,
               style: {
                 background: '#363636',
                 color: '#fff',
               },
+              // Different styles for different toast types
               success: {
                 duration: 3000,
                 style: {
-                  background: '#4ade80',
-                  color: '#fff',
+                  background: '#22c55e',
                 },
               },
               error: {
                 duration: 4000,
                 style: {
                   background: '#ef4444',
-                  color: '#fff',
                 },
               },
             }}
           />
-          {children}
         </CartProvider>
       </AuthProvider>
-    </ErrorBoundary>
+    </>
   );
 }
 
