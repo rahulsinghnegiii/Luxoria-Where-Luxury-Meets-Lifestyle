@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
+    "dev": "next dev",
+    "build": "npm run clean && next build",
     "start": "next start",
+    "clean": "rm -rf .next && rm -rf build-output",
     "lint": "next lint",
     "admin:prepare": "cd scripts && npm install",
     "admin:promote": "cd scripts && node run-promote-admin.js",
