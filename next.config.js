@@ -10,6 +10,9 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
 
+  // Explicitly set output directory for Vercel
+  distDir: '.next',
+
   images: {
     remotePatterns: [
       {
@@ -63,13 +66,6 @@ const nextConfig = {
   onDemandEntries: {
     maxInactiveAge: 15 * 60 * 1000, // 15 minutes
     pagesBufferLength: 2,
-  },
-  
-  // Let Vercel handle the output configuration
-  
-  // Fix experimental options according to Next.js 15 requirements
-  experimental: {
-    // Remove serverActions entirely to avoid compatibility issues
   },
   
   // Disable unnecessary webpack optimizations that can cause issues
