@@ -1,11 +1,12 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import confetti from 'canvas-confetti';
 
-export default function CheckoutSuccessPage() {
+// Component to handle the search params retrieval
+function CheckoutSuccessContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const sessionId = searchParams?.get('session_id');
@@ -142,5 +143,34 @@ export default function CheckoutSuccessPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+// Loading fallback component
+function LoadingCheckout() {
+  return (
+    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+      <div className="bg-white shadow-lg rounded-lg p-8">
+        <div className="animate-pulse">
+          <div className="mx-auto h-12 w-12 rounded-full bg-gray-200"></div>
+          <div className="mt-6 h-8 bg-gray-200 rounded w-3/4 mx-auto"></div>
+          <div className="mt-2 h-4 bg-gray-200 rounded w-1/2 mx-auto"></div>
+          <div className="mt-8 h-24 bg-gray-200 rounded"></div>
+          <div className="mt-10 flex justify-center gap-4">
+            <div className="h-10 w-32 bg-gray-200 rounded"></div>
+            <div className="h-10 w-32 bg-gray-200 rounded"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Main component that uses Suspense
+export default function CheckoutSuccessPage() {
+  return (
+    <Suspense fallback={<LoadingCheckout />}>
+      <CheckoutSuccessContent />
+    </Suspense>
   );
 } 
