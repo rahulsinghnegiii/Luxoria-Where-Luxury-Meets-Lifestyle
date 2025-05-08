@@ -1,0 +1,340 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --gray-dark: #2d3436;
+  --gray-medium: #636e72;
+  --gray-light: #f1f2f6;
+  --accent-orange: #ff7043;
+  --accent-orange-dark: #e5593b;
+  
+  /* New futuristic color variables */
+  --neon-blue: #4361ee;
+  --neon-purple: #7209b7;
+  --neon-pink: #f72585;
+  --neon-teal: #4cc9f0;
+  --cyber-yellow: #ffd60a;
+  --glow-blue: rgba(67, 97, 238, 0.6);
+  --glow-purple: rgba(114, 9, 183, 0.6);
+  
+  /* Improved dark mode text colors */
+  --dark-text-primary: rgba(255, 255, 255, 0.95);
+  --dark-text-secondary: rgba(255, 255, 255, 0.7);
+  --dark-text-tertiary: rgba(255, 255, 255, 0.5);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* New utility classes for dark backgrounds */
+.dark-bg {
+  background-color: #0f0f0f;
+  color: var(--dark-text-primary);
+}
+
+.dark-text-primary {
+  color: var(--dark-text-primary);
+}
+
+.dark-text-secondary {
+  color: var(--dark-text-secondary);
+}
+
+.dark-text-tertiary {
+  color: var(--dark-text-tertiary);
+}
+
+.btn-primary {
+  background-color: var(--accent-orange);
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-orange-dark);
+}
+
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hero-content {
+  background-color: var(--gray-dark);
+  color: white;
+  padding: 4rem 2rem;
+}
+
+.hero-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--gray-dark);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card-shadow {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.card-shadow:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Futuristic Animation Keyframes */
+@keyframes shine {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 300% 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px 0 var(--glow-blue);
+  }
+  50% {
+    box-shadow: 0 0 30px 5px var(--glow-purple);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes cyber-glitch {
+  0% {
+    clip-path: inset(80% 0 0 0);
+    transform: translate(-2px, 0);
+  }
+  10% {
+    clip-path: inset(10% 0 85% 0);
+    transform: translate(1px, 0);
+  }
+  20% {
+    clip-path: inset(80% 0 13% 0);
+    transform: translate(3px, 0);
+  }
+  30% {
+    clip-path: inset(10% 0 69% 0);
+    transform: translate(-1px, 0);
+  }
+  40% {
+    clip-path: inset(66% 0 3% 0);
+    transform: translate(1px, 0);
+  }
+  50% {
+    clip-path: inset(25% 0 58% 0);
+    transform: translate(-3px, 0);
+  }
+  60% {
+    clip-path: inset(47% 0 33% 0);
+    transform: translate(2px, 0);
+  }
+  70% {
+    clip-path: inset(94% 0 7% 0);
+    transform: translate(-2px, 0);
+  }
+  80%, 100% {
+    clip-path: inset(100% 0 0 0);
+    transform: translate(0, 0);
+  }
+}
+
+/* Utility classes for 3D and futuristic effects */
+.perspective {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.cyber-border {
+  position: relative;
+  border: 1px solid transparent;
+}
+
+.cyber-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, var(--neon-blue), var(--neon-purple), var(--neon-teal), var(--neon-blue));
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(3px);
+  animation: gradient-shift 15s ease infinite;
+  border-radius: inherit;
+}
+
+.neon-text {
+  color: var(--neon-blue);
+  text-shadow: 0 0 5px var(--glow-blue), 0 0 10px var(--glow-blue);
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark-glassmorphism {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animation classes */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: shine 2s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+.animate-glitch {
+  position: relative;
+}
+
+.animate-glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  color: var(--neon-pink);
+  clip-path: inset(100% 0 0 0);
+  animation: cyber-glitch 3s infinite linear alternate-reverse;
+}
+
+/* Ensure text visibility on gradient backgrounds */
+.text-on-gradient {
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.text-on-dark {
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.text-shadow-sm {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.text-shadow-md {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Improve contrast for hero sections */
+.hero-text {
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Add stronger color contrast for text on any background */
+.enhanced-text-contrast * {
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+}
+
+/* Specific contrast fixes for common light gray text */
+.text-gray-100, .text-gray-200, .text-gray-300 {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Fix for placeholder text */
+::placeholder {
+  color: rgba(107, 114, 128, 0.8) !important;
+  opacity: 1 !important;
+}

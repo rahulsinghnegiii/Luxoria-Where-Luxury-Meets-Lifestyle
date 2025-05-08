@@ -1,0 +1,51 @@
+{
+  "sorted_middleware": [],
+  "middleware": {
+    "/": {
+      "files": [
+        "server/edge/chunks/_9dd07395._.js",
+        "server/edge/chunks/[root-of-the-server]__de110ef0._.js",
+        "server/edge/chunks/edge-wrapper_48d76c47.js"
+      ],
+      "name": "middleware",
+      "page": "/",
+      "matchers": [
+        {
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/profile/:path*{(\\\\.json)}?",
+          "originalSource": "/profile/:path*"
+        },
+        {
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/orders/:path*{(\\\\.json)}?",
+          "originalSource": "/orders/:path*"
+        },
+        {
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/dashboard/:path*{(\\\\.json)}?",
+          "originalSource": "/dashboard/:path*"
+        },
+        {
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/admin/:path*{(\\\\.json)}?",
+          "originalSource": "/admin/:path*"
+        },
+        {
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/checkout/:path*{(\\\\.json)}?",
+          "originalSource": "/checkout/:path*"
+        },
+        {
+          "regexp": "/:nextData(_next/data/[^/]{1,})?/wishlist/:path*{(\\\\.json)}?",
+          "originalSource": "/wishlist/:path*"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "development",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "SncwWOzjVXbSZSMn3VcKqa5HDFX5pOIJXDzvDBtn/uA=",
+        "__NEXT_PREVIEW_MODE_ID": "c3f35e6a5eebcb65a47a235384162ed6",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "4ec89b16229614ac8c5635445a91496c4617a77f1ed5f4635753283814fba668",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "64e916bf4a3d72176355a0e0c634e9b83f2e4b2a9f46ef7c654b90f20510599f"
+      }
+    }
+  },
+  "instrumentation": null,
+  "functions": {}
+}

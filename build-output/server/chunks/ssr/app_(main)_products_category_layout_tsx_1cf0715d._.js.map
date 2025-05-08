@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://G%3A/PORTFOLIO/e-commerce-store/app/%28main%29/products/category/layout.tsx"],"sourcesContent":["import { ReactNode } from 'react';\r\n\r\nexport default function CategoryLayout({ children }: { children: ReactNode }) {\r\n  return (\r\n    <>\r\n      {children}\r\n    </>\r\n  );\r\n} "],"names":[],"mappings":";;;;;AAEe,SAAS,eAAe,EAAE,QAAQ,EAA2B;IAC1E,qBACE;kBACG;;AAGP","debugId":null}}]
+}

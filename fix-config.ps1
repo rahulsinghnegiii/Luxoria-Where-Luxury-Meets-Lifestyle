@@ -1,0 +1,1 @@
+Set-Content -Path "next.config.js" -Value "const nextConfig = { images: { domains: ['images.unsplash.com', 'via.placeholder.com', 'placehold.co'], quality: 60, minimumCacheTTL: 86400, deviceSizes: [640, 750, 828, 1080, 1200], imageSizes: [16, 32, 48, 64, 96, 128, 256] }, reactStrictMode: true, productionBrowserSourceMaps: false }; module.exports = nextConfig;"

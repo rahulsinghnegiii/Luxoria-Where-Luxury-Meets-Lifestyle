@@ -1,0 +1,7 @@
+IMPORTANT: To complete this process, you need to:
+1. Start your application
+2. Open your browser console
+3. Run this command in the console:
+   localStorage.setItem('mockUsers', '[{"id":"user_1745940458615","email":"demo@example.com","password":"
+rahul@123","name":"demo","role":"admin","createdAt":"2025-04-29T15:27:38.615Z"}]');
+PS G:\PORTFOLIO\e-commerce-store\scripts>
