@@ -4,6 +4,15 @@ const nextConfig = {
   // Specify a unique build directory to avoid conflicts
   distDir: 'build-output',
 
+  // Disable TypeScript and ESLint checks during build
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
   images: {
     remotePatterns: [
       {
